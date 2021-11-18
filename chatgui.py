@@ -18,7 +18,7 @@ with open('words.pkl', 'rb') as word_file:
 with open('classes.pkl', 'rb') as class_file:
     classes = pickle.load(class_file)
 
-
+nltk.data.path.append('/home/chamath/Documents/PyProjects/ChatBot')
 
 def clean_up_sentence(sentence):
     sentence_words = nltk.word_tokenize(sentence)
@@ -63,7 +63,7 @@ def getResponse(ints, intents_json):
     
     for i in list_of_intents:
         if (i['tag'] == tag):
-            result = random.choise(i['responses'])
+            result = random.choice(i['responses'])
             break
     return result
 
